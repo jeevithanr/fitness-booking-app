@@ -11,7 +11,8 @@ def get_all_classes(user_timezone):
     try:
         logger.info(f"Fetching all classes for timezone: {user_timezone}")
         classes = FitnessClass.query.all()
-        user_timezone = user_timezone.strip()
+
+        user_timezone = normalize_timezone(user_timezone)
         target_tz = pytz.timezone(user_timezone)
 
         class_list = []
@@ -48,7 +49,14 @@ def get_all_classes(user_timezone):
             "status_code": HTTPStatus.OK
         }), HTTPStatus.OK
 
-
+def normalize_timezone(user_input):
+    
+    cleaned_input = user_input.strip().lower().replace(" ", "").replace("_", "")
+    for tz in pytz.all_timezones:
+        cleaned_tz = tz.lower().replace("_", "").replace(" ", "")
+        if cleaned_input == cleaned_tz:
+            return tz
+    raise ValueError(f"Invalid timezone: '{user_input}'")
 
 def createClasses(data):
     try:
