@@ -13,8 +13,8 @@ cd fitness_booking_app
 
 ### 2. Create virtual environment
 
-python -m venv venv
-source venv/bin/activate
+#python -m venv venv
+#source venv/bin/activate
 
 ### 3. Install dependencies
 
@@ -22,9 +22,9 @@ pip install -r requirements.txt
 
 ### 4. Initialize the database
 
-flask db init
-flask db migrate -m "Initial migration"
-flask db upgrade
+#flask db init
+#flask db migrate -m "Initial migration"
+#flask db upgrade
 
 ### 5. Run the server
 
