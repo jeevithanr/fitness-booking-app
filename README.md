@@ -70,21 +70,6 @@ curl "http://127.0.0.1:5000/classes?timeZone=Asia/Kolkata"
   
 curl "http://127.0.0.1:5000/bookings?email=preeth@gmail.com"
 
-## 🗂️ Project Structure
-
-fitness_booking_app/
-│
-├── run.py            # App entry point
-├── config.py         # App config
-├── requirements.txt  # Dependencies
-├── migrations/       # DB migration files
-├── app/
-│   ├── __init__.py       # App factory
-│   ├── models/           # SQLAlchemy models
-│   ├── routes/           # API routes
-│   ├── services/         # Business logic
-│   └── utils/            # DB and logger setup
-└── app.log           # Log file
 
 ## ✅ Tech Stack
 
