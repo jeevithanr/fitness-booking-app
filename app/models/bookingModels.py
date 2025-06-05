@@ -8,3 +8,4 @@ class Booking(db.Model):
     class_id = db.Column(db.String(36), db.ForeignKey('fitness_class.id'), nullable=False)
     client_name = db.Column(db.String(100), nullable=False)
     client_email = db.Column(db.String(100), nullable=False)
+    fitness_class = db.relationship('FitnessClass', backref='bookings')

@@ -20,8 +20,7 @@ def create_app():
     def log_request():
         logger.info(f"Incoming request: {request.method} {request.path}")
         logger.info(f"Request body: {request.get_json(silent=True)}")
-    
-    # Middleware to log every response
+
     @app.after_request
     def log_response(response):
         logger.info(f"Response status: {response.status}")

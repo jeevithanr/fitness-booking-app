@@ -65,6 +65,7 @@ def get_bookings_by_email(email):
         booking_list.append({
             'id': booking.id,
             'class_id': booking.class_id,
+            'class_name': booking.fitness_class.name if booking.fitness_class else None,
             'client_name': booking.client_name,
             'client_email': booking.client_email
         })
